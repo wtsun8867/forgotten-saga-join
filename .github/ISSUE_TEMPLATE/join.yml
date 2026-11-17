@@ -1,0 +1,36 @@
+name: 참여 신청
+description: 포가튼 사가 이식 저장소에 초대를 신청합니다
+title: "[참여 신청] "
+labels: ["참여 신청"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        신청하는 깃허브 계정으로 초대가 갑니다. 다른 계정으로 받고 싶으면 아래에 적어 주세요.
+  - type: input
+    id: nick
+    attributes:
+      label: 카페 닉네임 (또는 부르는 이름)
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: 하고 싶은 일
+      options:
+        - 플레이·테스트
+        - 개발 참여
+        - 기타
+    validations:
+      required: true
+  - type: textarea
+    id: memo
+    attributes:
+      label: 하고 싶은 말 (선택)
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: 확인
+      options:
+        - label: main 브랜치에는 커밋·푸시하지 않고, develop_<내 아이디>·release_<내 아이디> 브랜치만 쓰겠습니다.
+          required: true
